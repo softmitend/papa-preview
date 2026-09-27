@@ -1,0 +1,344 @@
+/* buttom formulir ajukan/draft cuti */
+.leave-button {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 2rem 0 4rem 0;
+}
+
+.leave-button .btn-light,
+.leave-button .btn-danger {
+    border-radius: 25px;
+    padding: 8px 20px;
+}
+
+.leave-button .btn-light {
+    background-color: #efefef;
+    border-color: #ccc;
+    color: #333;
+    width: 15%;
+}
+.leave-button .btn-danger {
+    background-color: #d51c48;
+    border-color: #d51c48;
+    width: 15%;
+}
+.leave-button .btn-danger:hover {
+    background-color: #ec2150;
+    border-color: #ec2150;
+}
+
+/* leave histories action button */
+.leave-action {
+    display: flex;
+    flex-direction: column;
+    font-size: 10px;
+    gap: 10px;
+}
+.leave-action-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+/* Custom Badge Colors */
+/* .badge-draft {
+    display: inline-block;
+    font-size: 75%;
+    font-weight: 600;
+    padding: 7px 12px;
+    letter-spacing: 0.3px;
+    line-height: 1;
+    border-radius: 30px;
+    background-color: #D51C48;
+    color: #fff;
+}
+
+.badge-process {
+    display: inline-block;
+    font-size: 75%;
+    font-weight: 600;
+    padding: 7px 12px;
+    letter-spacing: 0.3px;
+    line-height: 1;
+    border-radius: 30px;
+    background-color: #008ECE;
+    color: #fff;
+}
+
+.badge-accepted {
+    display: inline-block;
+    font-size: 75%;
+    font-weight: 600;
+    padding: 7px 12px;
+    letter-spacing: 0.3px;
+    line-height: 1;
+    border-radius: 30px;
+    background-color: #085A24;
+    color: #fff;
+} */
+
+/* rincian di riwayat cuti */
+.history-details {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* Persetujuan Cuti PM */
+/* .leave-approval-button {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.leave-approval-button a {
+    text-decoration: none;
+} */
+
+/* button revisi */
+/* .approval-action-a {
+    border-radius: 20px;
+    padding: 0.6rem 2rem;
+    background-color: #ffeda3;
+    color: #d97706;
+}
+.approval-action-a:hover {
+    background-color: #d97706;
+    color: #ffeda3;
+} */
+
+/* button setuju */
+/* .approval-action-b {
+    border-radius: 20px;
+    padding: 0.6rem 2rem;
+    background-color: #b6f2b6;
+    color: #055918;
+}
+.approval-action-b:hover {
+    background-color: #055918;
+    color: #b6f2b6;
+} */
+
+/* button tangguhkan */
+/* .approval-action-c {
+    border-radius: 20px;
+    padding: 0.6rem 2rem;
+    background-color: #ffcdd9;
+    color: #dc2626;
+}
+.approval-action-c:hover {
+    background-color: #dc2626;
+    color: #ffcdd9;
+} */
+
+/* button rincian */
+/* .approval-action-d {
+    border-radius: 20px;
+    padding: 0.6rem 2rem;
+    background-color: #40ad40;
+    color: #ffffff;
+}
+.approval-action-d:hover {
+    background-color: #147514;
+    color: #ffffff;
+} */
+
+/* overtime buttons */
+.evidence {
+    display: flexbox;
+    font-size: 12px;
+    padding: 0.6rem 1rem;
+    background-color: #EDE9FE;
+    font-weight: bold;
+    border-radius: 20px;
+    color: #6D28D9;
+}
+.overtime-action {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    font-size: 10px;
+    height: 100%;
+    gap: 10px;
+}
+.badge-custom {
+    font-size: 10px;
+}
+/* .overtime-edit {
+    font-size: 12px;
+    border-radius: 20px;
+    padding: 0.6rem 0;
+    font-weight: bold;
+    background-color: #DBEAFE;
+    color: #1D4ED8;
+}
+.overtime-edit:hover {
+    background-color: #1D4ED8;
+    color: #DBEAFE;
+}
+.overtime-delete {
+    font-size: 12px;
+    border-radius: 20px;
+    padding: 0.6rem 0;
+    font-weight: bold;
+    background-color: #FEE2E2;
+    border-color: #FEE2E2;
+    color: #B91C1C;
+}
+.overtime-delete:hover {
+    background-color: #B91C1C;
+    color: #FEE2E2;
+} */
+
+/* status draft*/
+/* .draft-overtime {
+    background-color: #E5E7EB;
+    padding: 5px 0;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #000;
+}
+.draft-overtime p {
+    margin: 0;
+} */
+
+/* status menunggu */
+/* .wait-overtime {
+    background-color: #FEF3C7;
+    padding: 5px 5px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #D97706;
+}
+.wait-overtime p {
+    margin: 0;
+} */
+
+/* status disetujui */
+/* .approved-overtime {
+    background-color: #D1FAE5;
+    padding: 5px 5px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #047857;
+}
+.approved-overtime p {
+    margin: 0;
+} */
+
+/* status ditolak */
+/* .rejected-overtime {
+    background-color: #FEE2E2;
+    padding: 5px 5px;
+    border-radius: 20px;
+    font-size: 12px;
+    color: #B91C1C;
+}
+.rejected-overtime p {
+    margin: 0;
+} */
+
+/* payslip */
+/* .btn-cetak {
+  background-color: #d51c48;
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-weight: 600;
+  font-size: 14px;
+}
+.btn-cetak:hover {
+  background-color: #c0392b;
+}
+.payslip-edit {
+    font-size: 12px;
+    border-radius: 20px;
+    padding: 0.6rem 0;
+    font-weight: bold;
+    background-color: #CDD3D8;
+    color: rgb(53, 53, 53);
+}
+.payslip-edit:hover {
+    background-color: rgb(53, 53, 53);
+    color: rgb(228, 228, 228);
+} */
+
+/* button edit profil */
+.button-edit {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 2rem;
+    width: 100%;
+    gap: 1rem;
+}
+.edit-profile {
+    background-color: #d51c48;
+    border-radius: 20px;
+    padding: 0.5rem;
+    width: 180px;
+}
+
+.edit-profile a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.edit-profile button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+}
+
+.back-profile {
+    background-color: #D4D2D2;
+    border-radius: 20px;
+    padding: 0.5rem;
+    width: 200px;
+}
+
+.back-profile a {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.back-profile button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    border: 0;
+    background: transparent;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    cursor: pointer;
+}
+
+/* Global guard: prevent phantom horizontal overflow on app layout */
+html,
+body,
+#app,
+.main-wrapper {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.main-content,
+.main-footer {
+    box-sizing: border-box;
+    max-width: 100%;
+}

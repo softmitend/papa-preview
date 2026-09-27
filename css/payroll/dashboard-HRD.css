@@ -1,0 +1,303 @@
+.hrd-dashboard .section-header {
+    border-bottom: 1px solid #eceff3;
+    margin-bottom: 14px;
+    padding: 0 0 12px;
+}
+
+.hrd-dashboard .section-header h1 {
+    color: #c8103f;
+    font-size: 27px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.hrd-dashboard .dashboard-period {
+    align-items: center;
+    background: #eff6ff;
+    border: 1px solid #dbeafe;
+    border-radius: 6px;
+    color: #2563eb;
+    display: inline-flex;
+    font-size: 11px;
+    font-weight: 600;
+    gap: 6px;
+    padding: 4px 8px;
+}
+
+.hrd-dashboard .dashboard-updated {
+    color: #94a3b8;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.hrd-dashboard .dashboard-alert {
+    align-items: flex-start;
+    background: #fff5de;
+    border: 1px solid #f4d28f;
+    border-radius: 7px;
+    color: #9a6700;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 12px;
+    padding: 10px 12px;
+}
+
+.hrd-dashboard .dashboard-alert i {
+    font-size: 14px;
+    margin-top: 2px;
+}
+
+.hrd-dashboard .dashboard-alert strong {
+    display: block;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-bottom: 2px;
+}
+
+.hrd-dashboard .dashboard-alert .alert-sub {
+    font-size: 12px;
+    line-height: 1.35;
+}
+
+.hrd-dashboard .dashboard-stats-grid {
+    margin-top: 0;
+}
+
+.hrd-dashboard .dashboard-stats-grid > [class*='col-'] {
+    margin-bottom: 12px;
+}
+
+.hrd-dashboard .dashboard-stat-card {
+    background: #fff;
+    border: 1px solid #e8ebf1;
+    border-radius: 10px;
+    box-shadow: 0 1px 0 rgba(15, 23, 42, 0.02);
+    display: flex;
+    flex-direction: column;
+    min-height: 152px;
+    padding: 12px 14px;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-top {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-icon {
+    align-items: center;
+    border-radius: 8px;
+    display: inline-flex;
+    font-size: 13px;
+    height: 30px;
+    justify-content: center;
+    width: 30px;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-icon.blue {
+    background: #e8f0ff;
+    color: #1d4ed8;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-icon.emerald {
+    background: #e8f8ee;
+    color: #15803d;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-icon.violet {
+    background: #efe9ff;
+    color: #7c3aed;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-icon.orange {
+    background: #fff4e6;
+    color: #d97706;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-icon.teal {
+    background: #e7f7f7;
+    color: #0f766e;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-badge {
+    border-radius: 999px;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+    padding: 4px 7px;
+    white-space: nowrap;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-badge.green {
+    background: #e7f8eb;
+    color: #15803d;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-badge.blue {
+    background: #e8f0ff;
+    color: #1d4ed8;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-badge.violet {
+    background: #efe9ff;
+    color: #7c3aed;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-badge.orange {
+    background: #fff1d6;
+    color: #b45309;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-badge.neutral {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-value {
+    color: #0f172a;
+    font-size: clamp(21px, 2vw, 31px);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    line-height: 1.12;
+    margin-bottom: 3px;
+    word-break: break-word;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-label {
+    color: #334155;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1.35;
+    margin-bottom: 5px;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-sub {
+    color: #64748b;
+    font-size: 11px;
+    line-height: 1.35;
+    margin-bottom: 6px;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-link {
+    color: #475569;
+    display: inline-flex;
+    font-size: 11px;
+    font-weight: 600;
+    gap: 6px;
+    margin-top: auto;
+    text-decoration: none;
+}
+
+.hrd-dashboard .dashboard-stat-card .stat-link:hover {
+    color: #1d4ed8;
+    text-decoration: none;
+}
+
+.hrd-dashboard .dashboard-activity {
+    background: #fff;
+    border: 1px solid #e8ebf1;
+    border-radius: 10px;
+    margin-top: 8px;
+    padding: 14px 16px;
+}
+
+.hrd-dashboard .dashboard-activity .activity-head {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.hrd-dashboard .dashboard-activity .activity-head h4 {
+    color: #0f172a;
+    font-size: 27px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.hrd-dashboard .dashboard-activity .activity-head a {
+    color: #1d4ed8;
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.hrd-dashboard .dashboard-activity .activity-head a:hover {
+    text-decoration: underline;
+}
+
+.hrd-dashboard .dashboard-activity .activity-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.hrd-dashboard .dashboard-activity .activity-item {
+    align-items: flex-start;
+    border-top: 1px solid #eef1f5;
+    display: flex;
+    gap: 10px;
+    padding: 11px 0;
+}
+
+.hrd-dashboard .dashboard-activity .activity-item:first-child {
+    border-top: 0;
+}
+
+.hrd-dashboard .dashboard-activity .activity-icon {
+    align-items: center;
+    border-radius: 6px;
+    display: inline-flex;
+    font-size: 13px;
+    height: 30px;
+    justify-content: center;
+    margin-top: 2px;
+    width: 30px;
+}
+
+.hrd-dashboard .dashboard-activity .activity-icon.green {
+    background: #e7f8eb;
+    color: #15803d;
+}
+
+.hrd-dashboard .dashboard-activity .activity-icon.orange {
+    background: #fff4e6;
+    color: #d97706;
+}
+
+.hrd-dashboard .dashboard-activity .activity-icon.violet {
+    background: #efe9ff;
+    color: #7c3aed;
+}
+
+.hrd-dashboard .dashboard-activity .activity-icon.neutral {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.hrd-dashboard .dashboard-activity .activity-content strong {
+    color: #1e293b;
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 1px;
+}
+
+.hrd-dashboard .dashboard-activity .activity-content p {
+    color: #64748b;
+    font-size: 12px;
+    line-height: 1.4;
+    margin: 0;
+}
+
+@media (max-width: 991.98px) {
+    .hrd-dashboard .dashboard-updated {
+        display: none;
+    }
+
+    .hrd-dashboard .dashboard-alert {
+        margin-bottom: 10px;
+    }
+}

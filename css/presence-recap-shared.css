@@ -1,0 +1,413 @@
+/* ===== Filter card ===== */
+.presence-recap-filter-card {
+    border: 1px solid #f0e0e4;
+    border-radius: 14px;
+    overflow: visible;
+    background: #fff;
+}
+
+.presence-recap-filter-header {
+    padding: 1.1rem 1.35rem;
+    background: linear-gradient(135deg, #fff8fa 0%, #ffffff 55%);
+    border-bottom: 1px solid #f5e6ea;
+}
+
+.presence-recap-filter-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(213, 28, 72, 0.1);
+    color: #d51c48;
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.presence-recap-filter-title {
+    margin: 0;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.presence-recap-filter-desc {
+    margin: 0.15rem 0 0;
+    font-size: 0.85rem;
+    color: #6b7280;
+}
+
+.presence-recap-filter-form {
+    margin: 0;
+}
+
+.presence-recap-form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem 1.25rem;
+    margin-bottom: 1.25rem;
+}
+
+.presence-recap-form-group {
+    margin-bottom: 0;
+}
+
+.presence-recap-label {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 0.45rem;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #374151;
+    letter-spacing: 0.01em;
+}
+
+.presence-recap-label i {
+    color: #d51c48;
+    font-size: 0.9rem;
+}
+
+/* ===== Toolbar buttons ===== */
+.presence-recap-toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.65rem;
+    padding-top: 0.25rem;
+    border-top: 1px dashed #f0e0e4;
+}
+
+.presence-recap-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-height: 42px;
+    padding: 0.55rem 1.35rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.2;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.presence-recap-btn i {
+    font-size: 0.95rem;
+}
+
+.presence-recap-btn.presence-recap-btn-show {
+    background: linear-gradient(135deg, #d51c48 0%, #b8163c 100%);
+    color: #fff !important;
+    box-shadow: 0 4px 14px rgba(213, 28, 72, 0.28);
+}
+
+.presence-recap-btn.presence-recap-btn-show .btn-label,
+.presence-recap-btn.presence-recap-btn-show i {
+    color: #fff !important;
+}
+
+.presence-recap-btn.presence-recap-btn-show:hover:not(:disabled),
+.presence-recap-btn.presence-recap-btn-show:focus:not(:disabled),
+.presence-recap-btn.presence-recap-btn-show:active:not(:disabled) {
+    background: linear-gradient(135deg, #e82d58 0%, #c81842 100%);
+    color: #fff !important;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 18px rgba(213, 28, 72, 0.35);
+}
+
+.presence-recap-btn.presence-recap-btn-show:hover:not(:disabled) .btn-label,
+.presence-recap-btn.presence-recap-btn-show:hover:not(:disabled) i,
+.presence-recap-btn.presence-recap-btn-show:focus:not(:disabled) .btn-label,
+.presence-recap-btn.presence-recap-btn-show:focus:not(:disabled) i,
+.presence-recap-btn.presence-recap-btn-show:active:not(:disabled) .btn-label,
+.presence-recap-btn.presence-recap-btn-show:active:not(:disabled) i {
+    color: #fff !important;
+}
+
+.presence-recap-btn-print {
+    background: #fff;
+    color: #374151;
+    border: 1.5px solid #d1d5db;
+}
+
+.presence-recap-btn-print:hover:not(:disabled) {
+    background: #f9fafb;
+    border-color: #9ca3af;
+    color: #111827;
+    transform: translateY(-1px);
+}
+
+.presence-recap-btn-print:not(:disabled) {
+    border-color: #d51c48;
+    color: #d51c48;
+    background: #fff8fa;
+}
+
+.presence-recap-btn:disabled,
+.presence-recap-btn-print:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+.presence-recap-btn:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(213, 28, 72, 0.2);
+}
+
+/* ===== Native select — Bulan & Tahun ===== */
+.presence-recap-filter-card .presence-recap-native-select {
+    height: 44px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fafafa;
+    color: #374151;
+    font-size: 0.9rem;
+    padding: 0 14px;
+    cursor: pointer;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+    appearance: auto;
+    -webkit-appearance: menulist;
+}
+
+.presence-recap-filter-card .presence-recap-native-select:focus {
+    border-color: #d51c48;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(213, 28, 72, 0.12);
+    outline: none;
+}
+
+/* ===== Select2 — Karyawan (semua filter dengan .presence-employee-select) ===== */
+select.presence-employee-select.select2-hidden-accessible {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+}
+
+select.presence-employee-select + .select2-container {
+    width: 100% !important;
+    display: block;
+    margin-bottom: 0;
+}
+
+select.presence-employee-select + .select2-container .select2-selection--single {
+    height: 44px;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fafafa;
+    transition: border-color 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+select.presence-employee-select + .select2-container .select2-selection--single .select2-selection__rendered {
+    line-height: 41px;
+    padding-left: 14px;
+    padding-right: 36px;
+    color: #374151;
+    font-size: 0.9rem;
+}
+
+select.presence-employee-select + .select2-container .select2-selection--single .select2-selection__arrow {
+    height: 42px;
+    right: 10px;
+    width: 22px;
+}
+
+select.presence-employee-select + .select2-container .select2-selection--single .select2-selection__arrow b {
+    border-color: #9ca3af transparent transparent transparent;
+    border-width: 6px 5px 0 5px;
+    margin-top: -2px;
+}
+
+select.presence-employee-select + .select2-container.select2-container--open .select2-selection--single .select2-selection__arrow b {
+    border-color: transparent transparent #d51c48 transparent;
+    border-width: 0 5px 6px 5px;
+    margin-top: -4px;
+}
+
+select.presence-employee-select + .select2-container .select2-selection--single .select2-selection__clear {
+    margin-right: 28px;
+    color: #9ca3af;
+    font-size: 1.1rem;
+}
+
+select.presence-employee-select + .select2-container.select2-container--focus .select2-selection--single,
+select.presence-employee-select + .select2-container.select2-container--open .select2-selection--single {
+    border-color: #d51c48;
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(213, 28, 72, 0.12);
+}
+
+/* Toolbar ringkas (mis. laporan kinerja) */
+.performance-toolbar select.presence-employee-select + .select2-container {
+    min-width: 180px;
+}
+
+/* ===== Select2 — dropdown panel karyawan ===== */
+body:has(.presence-employee-select) .select2-container--default .select2-dropdown {
+    border: 1px solid #ecd5dc;
+    border-radius: 12px;
+    box-shadow: 0 12px 32px rgba(17, 24, 39, 0.12);
+    overflow: hidden;
+    margin-top: 4px;
+    padding: 4px 0;
+    z-index: 9999 !important;
+}
+
+body:has(.presence-employee-select) .select2-search--dropdown .select2-search__field {
+    pointer-events: auto !important;
+    background-color: #fff !important;
+    color: #374151 !important;
+    cursor: text !important;
+}
+
+body:has(.presence-employee-select) .select2-container--default .select2-dropdown .select2-search--dropdown {
+    padding: 8px 10px 6px;
+}
+
+body:has(.presence-employee-select) .select2-container--default .select2-dropdown .select2-search--dropdown .select2-search__field {
+    width: 100% !important;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 0.88rem;
+    outline: none;
+}
+
+body:has(.presence-employee-select) .select2-container--default .select2-dropdown .select2-search--dropdown .select2-search__field:focus {
+    border-color: #d51c48;
+    box-shadow: 0 0 0 2px rgba(213, 28, 72, 0.1);
+}
+
+body:has(.presence-employee-select) .select2-container--default .select2-results__option {
+    padding: 10px 14px;
+    font-size: 0.88rem;
+    color: #374151;
+}
+
+body:has(.presence-employee-select) .select2-container--default .select2-results__option--highlighted[aria-selected] {
+    background-color: #d51c48 !important;
+    color: #fff !important;
+}
+
+body:has(.presence-employee-select) .select2-container--default .select2-results__option[aria-selected="true"] {
+    background-color: #fff0f3;
+    color: #b8163c;
+    font-weight: 600;
+}
+
+body:has(.presence-employee-select) .select2-container--default .select2-results > .select2-results__options {
+    max-height: 260px;
+    overflow-y: auto;
+}
+
+/* ===== Table & summary (shared) ===== */
+.presence-recap-summary-box {
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 1rem 1.25rem;
+    color: #374151;
+    font-size: 0.92rem;
+}
+
+.presence-recap-table-wrap {
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    overflow: hidden;
+}
+
+.presence-recap-table-wrap .table {
+    margin-bottom: 0;
+    color: #212529;
+}
+
+.presence-recap-table-wrap .table thead th {
+    background-color: #d51c48 !important;
+    color: #fff !important;
+    font-weight: 600;
+    font-size: 0.88rem;
+    padding: 0.8rem 1rem;
+    border: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.presence-recap-table-wrap .table tbody td {
+    color: #212529 !important;
+    font-size: 0.88rem;
+    padding: 0.7rem 1rem;
+    vertical-align: middle;
+    border-color: #e5e7eb;
+    background-color: #fff;
+}
+
+.presence-recap-table-wrap .table tbody tr:nth-child(even) td {
+    background-color: #f9fafb;
+}
+
+.presence-recap-table-wrap .table tbody tr.table-secondary td {
+    background-color: #f3f4f6 !important;
+    color: #111827 !important;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .presence-recap-toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .presence-recap-btn {
+        width: 100%;
+    }
+
+    .presence-recap-form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media print {
+    .main-sidebar,
+    .main-navbar,
+    .navbar,
+    .navbar-bg,
+    .section-header,
+    .main-footer {
+        display: none !important;
+    }
+
+    .main-content,
+    .section,
+    .section-body {
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+    .presence-recap-table-wrap {
+        display: block !important;
+        box-shadow: none !important;
+        border: none !important;
+        margin: 0 !important;
+    }
+
+    .presence-recap-table-wrap .card-body {
+        padding: 0 !important;
+    }
+}

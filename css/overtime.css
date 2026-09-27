@@ -1,0 +1,834 @@
+.card-header-overtime {
+    display: flex;
+    justify-content: center;
+    color: #ffffff;
+    background-color: #d51c48;
+    border-radius: 10px 10px 0 0;
+}
+.card-header-overtime h4 {
+    font-size: 18px;
+    padding: 1rem 0 0.5rem 0;
+}
+.card-overtime {
+    background-color: #ffffff;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+}
+.sub-head-overtime {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+.lead-overtime {
+    font-weight: 600;
+    font-size: 18px;
+    color: #d51c48;
+}
+
+
+/* buttom ajukan/draft cuti */
+.overtime-button {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin: 2rem 0 4rem 0;
+}
+
+.overtime-button .btn-light,
+.overtime-button .btn-danger {
+    border-radius: 25px;
+    padding: 8px 20px;
+}
+
+.overtime-button .btn-light {
+    background-color: #efefef;
+    border-color: #ccc;
+    color: #333;
+    width: 15%;
+}
+.overtime-button .btn-danger {
+    background-color: #d51c48;
+    border-color: #d51c48;
+    width: 15%;
+}
+.overtime-button .btn-danger:hover {
+    background-color: #ec2150;
+    border-color: #ec2150;
+}
+
+.overtime-button .btn-danger.overtime-btn-loading {
+    pointer-events: none;
+    min-width: 140px;
+}
+.overtime-button .btn-danger .spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+    border-width: 0.15em;
+}
+
+
+/* inputan tanggal dan jam lembur */
+.form-control {
+    border-color: #d51c48;
+    color: #000;
+}
+.overtime-group {
+    color: #d51c48;
+    font-weight: 600;
+}
+.overtime-group label {
+    color: #d51c48;
+    font-weight: 600;
+    font-size: 14px;
+}
+.overtime {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem;
+    gap: 2rem;
+    justify-content: space-between;
+    width: 100%;
+}
+.overtime-time {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    /* gap: 2rem;
+    justify-content: space-between; */
+    width: 100%;
+}
+
+.input-time-overtime {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+.input-date-overtime input {
+    width: 500px;
+}
+
+.overtime-date {
+    display: flex;
+    margin-top: -2rem;
+    width: 100%;
+    height: 43px;
+}
+.overtime-custom {
+    display: flex;
+    flex-direction: row;
+    margin-top: -1rem;
+    justify-content: space-between;
+    width: 100%;
+}
+.overtime-time label {
+    color: #d51c48;
+    font-weight: 600;
+    font-size: 14px;
+}
+.overtime-date input[type="date"] {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-family: Poppins, sans-serif;
+    background-color: #fff;
+    cursor: pointer;
+}
+.overtime-date input[type="date"]:focus {
+    box-shadow: 0 0 6px rgba(46, 139, 87, 0.4);
+    outline: none;
+}
+
+/* time picker */
+input[type="time"] {
+    font-family: Poppins, sans-serif;
+    font-size: 12px;
+    padding: 7px 5rem;
+    border-radius: 4px;
+    background-color: #fdfdfd;
+    color: #000;
+}
+input[type="time"]:focus {
+    outline: none;
+    box-shadow: 0 0 4px rgba(241, 51, 51, 0.5);
+}
+/* input[type="time"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+} */
+input[type="time"]::-moz-focus-inner {
+    border: 0;
+}
+
+
+/* upload wrapper */
+.upload-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 30px auto;
+}
+
+.upload-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 200px;
+    height: auto;
+    padding: 1rem;
+    margin-top: -1.5rem;
+    border: 2px dashed #d3d3d3;
+    border-radius: 10px;
+    background: #fff;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Preview di dalam upload box - tinggi mengikuti gambar */
+.evidence-upload-box {
+    position: relative;
+    min-height: 200px;
+    height: auto;
+    align-items: stretch;
+}
+.evidence-upload-box .evidence-upload-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 200px;
+}
+.evidence-upload-box .evidence-preview-inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    box-sizing: border-box;
+}
+.evidence-upload-box .evidence-preview-inner img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    display: block;
+}
+
+/* Preview: gambar tengah, nama file dan tombol hapus di bawah gambar */
+.evidence-preview-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+.evidence-preview-center .evidence-preview-img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    max-height: 200px;
+    object-fit: contain;
+    display: block;
+}
+.evidence-preview-center .evidence-preview-filename {
+    margin-top: 0.5rem;
+    font-weight: 600;
+    font-size: 14px;
+    word-break: break-word;
+    max-width: 100%;
+}
+.evidence-preview-center .evidence-preview-pdf-icon {
+    display: block;
+}
+.evidence-preview-center .btn-remove-evidence {
+    margin-top: 0.75rem;
+}
+
+.upload-icon i {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.upload-text {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.upload-support {
+    color: #888;
+    font-size: 12px;
+}
+
+/* Input file menutupi area, transparan */
+.upload-box input[type="file"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.upload-text h4 {
+    font-size: 14px;
+    margin: 0;
+    color: #000;
+}
+.upload-text p {
+    font-size: 10px;
+    margin: 0;
+    color: #b4b4b4;
+}
+
+/* upload proof (new) */
+.overtime-proof-uploader {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.overtime-proof-dropzone {
+    border: 1.5px dashed rgba(213, 28, 72, 0.35);
+    border-radius: 18px;
+    background: linear-gradient(180deg, #fff 0%, #fff7f9 100%);
+    padding: 1.25rem;
+    min-height: 240px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.overtime-proof-dropzone:hover,
+.overtime-proof-dropzone:focus-within,
+.overtime-proof-dropzone.has-file {
+    border-color: #d51c48;
+    box-shadow: 0 12px 28px rgba(213, 28, 72, 0.08);
+}
+
+.overtime-proof-empty {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    text-align: center;
+}
+
+.overtime-proof-empty-icon {
+    width: 84px;
+    height: 84px;
+    border-radius: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffe8ee;
+    color: #d51c48;
+}
+
+.overtime-proof-empty-icon svg {
+    width: 42px;
+    height: 42px;
+}
+
+.overtime-proof-empty h5 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.overtime-proof-empty p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.overtime-proof-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.overtime-proof-media {
+    position: relative;
+    min-height: 170px;
+    border-radius: 14px;
+    background: #f8fafc;
+    border: 1px solid #edf2f7;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overtime-proof-preview-image,
+.overtime-proof-preview-frame {
+    width: 100%;
+    min-height: 170px;
+    max-height: 300px;
+    object-fit: contain;
+    border: 0;
+    background: #fff;
+}
+
+.overtime-proof-file-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(17, 24, 39, 0.84);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.overtime-proof-preview-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.overtime-proof-name {
+    color: #111827;
+    font-size: 14px;
+    font-weight: 700;
+    word-break: break-all;
+}
+
+.overtime-proof-meta {
+    margin-top: 0.2rem;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.overtime-proof-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.overtime-proof-hint {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    font-size: 12px;
+}
+
+.overtime-proof-hint p {
+    margin: 0;
+}
+
+/* upload proof (new) */
+.overtime-proof-uploader {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.overtime-proof-dropzone {
+    border: 1.5px dashed rgba(213, 28, 72, 0.35);
+    border-radius: 18px;
+    background: linear-gradient(180deg, #fff 0%, #fff7f9 100%);
+    padding: 1.25rem;
+    min-height: 240px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.overtime-proof-dropzone:hover,
+.overtime-proof-dropzone:focus-within,
+.overtime-proof-dropzone.has-file {
+    border-color: #d51c48;
+    box-shadow: 0 12px 28px rgba(213, 28, 72, 0.08);
+}
+
+.overtime-proof-empty {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9rem;
+    text-align: center;
+}
+
+.overtime-proof-empty-icon {
+    width: 84px;
+    height: 84px;
+    border-radius: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffe8ee;
+    color: #d51c48;
+}
+
+.overtime-proof-empty-icon svg {
+    width: 42px;
+    height: 42px;
+}
+
+.overtime-proof-empty h5 {
+    margin: 0;
+    font-size: 17px;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.overtime-proof-empty p {
+    margin: 0;
+    color: #6b7280;
+    font-size: 13px;
+}
+
+.overtime-proof-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+}
+
+.overtime-proof-media {
+    position: relative;
+    min-height: 170px;
+    border-radius: 14px;
+    background: #f8fafc;
+    border: 1px solid #edf2f7;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overtime-proof-preview-image,
+.overtime-proof-preview-frame {
+    width: 100%;
+    min-height: 170px;
+    max-height: 300px;
+    object-fit: contain;
+    border: 0;
+    background: #fff;
+}
+
+.overtime-proof-file-badge {
+    position: absolute;
+    top: 0.75rem;
+    left: 0.75rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.35rem 0.65rem;
+    border-radius: 999px;
+    background: rgba(17, 24, 39, 0.84);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.overtime-proof-preview-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 0.9rem;
+    flex-wrap: wrap;
+}
+
+.overtime-proof-name {
+    color: #111827;
+    font-size: 14px;
+    font-weight: 700;
+    word-break: break-all;
+}
+
+.overtime-proof-meta {
+    margin-top: 0.2rem;
+    color: #6b7280;
+    font-size: 12px;
+}
+
+.overtime-proof-actions {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.overtime-proof-hint {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+    font-size: 12px;
+}
+
+.overtime-proof-hint p {
+    margin: 0;
+}
+
+/* Tabel riwayat lembur - scroll horizontal, isi sel sejajar satu baris */
+.table-responsive-overtime {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.table.overtime-histories-table {
+    min-width: 900px;
+    margin-bottom: 0;
+}
+.table.overtime-histories-table tbody td,
+.table.overtime-histories-table thead th,
+.table.table-bordered.overtime-histories-table tbody td,
+.table.table-bordered.overtime-histories-table thead th {
+    vertical-align: middle !important;
+    padding: 10px 12px;
+    white-space: nowrap;
+}
+.table.overtime-histories-table td.uraian-cell {
+    white-space: normal;
+}
+.table.overtime-histories-table td.uraian-cell .space-td {
+    line-height: 1.4;
+    max-width: 220px;
+}
+
+
+
+
+
+
+
+
+
+
+/* overtime histories */
+
+/* Main Table Styling */
+.overtime-histories {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+.overtime-histories h1 {
+    color: #000000;
+    font-size: 26px;
+    font-weight: 600;
+    padding: 1rem 1rem 0.5rem 1rem;
+}
+
+.header-overtime-histories h4 {
+    color: #d51c48;
+    font-size: 16px;
+    padding: 1rem;
+    border-bottom: 2px solid #d51c48;
+}
+
+.title-overtime-histories {
+    margin-left: 20px;
+    /* margin-bottom: 2rem; */
+}
+
+.lead-overtime-histories {
+    font-weight: 600;
+    font-size: 18px;
+    color: #d51c48;
+}
+
+.table-overtime-histories {
+    background-color: #fff;
+}
+
+.table-overtime-histories td,
+.table-overtime-histories th {
+    vertical-align: middle !important;
+    padding: 12px 15px;
+}
+
+.table-overtime-histories thead {
+    background-color: #EFEFEF;
+    color: #000;
+    font-weight: 800;
+}
+
+.table-overtime-histories thead th:first-child {
+  border-top-left-radius: 10px;
+}
+
+.table-overtime-histories thead th:last-child {
+  border-top-right-radius: 10px;
+}
+
+/* .table-overtime-histories tbody tr {
+    border-bottom: 1px solid #6c757d;
+} */
+
+.text-overtime {
+    text-align: center;
+    font-size: 14px;
+    color: #000;
+}
+
+/* data overtime user */
+.overtime-data {
+    font-size: 12px;
+    color: #000 !important;
+    padding: 1rem 0;
+}
+.space-td {
+    padding: 1rem 0rem;
+}
+.border-custom {
+    border: 1px solid #dee2e6 !important;
+}
+
+
+/* Detail Column Styling */
+.detail-item {
+    display: flex;
+    margin-bottom: 5px;
+    font-size: 13px;
+}
+
+.detail-item span b {
+    color: #34395e;
+}
+
+.detail-label-cuti {
+    font-weight: 500;
+    color: #6c757d;
+    width: 90px;
+    flex-shrink: 0;
+}
+
+
+/* Status Column Styling */
+.status-wrapper {
+    margin-bottom: 10px;
+}
+.status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+/* .status-item .badge {
+    font-size: 12px;
+    padding: 5px 10px;
+    width: 85px;
+    text-align: center;
+    border-radius: 4px;
+} */
+
+/* Garis Pemisah di Kolom Status */
+.status-separator {
+    border-top: 1px solid #e3e6f0;
+    margin-top: 10px;
+}
+
+/* Custom Badge Colors */
+/* .badge-draft {
+    background-color: #fc544b;
+    color: #fff;
+}
+.badge-proses {
+    background-color: #3abaf4;
+    color: #fff;
+}
+.badge-disetujui {
+    background-color: #63ed7a;
+    color: #fff;
+} */
+
+/* Action Column Button Styling */
+/* .table {
+    box-shadow: none !important;
+    font-weight: 500;
+} */
+
+
+
+
+
+/* persetujuan lembur */
+.title-overtime-approval {
+    /* margin-bottom: 2rem; */
+    padding: 0 20px;
+}
+.head-approval {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2rem;
+    /* gap: 20rem; */
+}
+.approval-filter {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-right: 20px;
+}
+.approval-filter h4 {
+    margin: 0;
+    font-size: 18px;
+}
+.app-filter {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #d51c48;
+    border-radius: 20px;
+    color: #fff;
+}
+.app-print {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #d51c48;
+    border-radius: 20px;
+    color: #fff;
+}
+
+/* tabel persetujuan lembur (referensi style approval pajak) */
+.leave-approval-page.overtime-approval-tax-style .approval-table thead th {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #64748b;
+    border-top: 0;
+    border-bottom: 1px solid #e8edf3;
+    background: #ffffff;
+    padding: 12px 10px;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.leave-approval-page.overtime-approval-tax-style .approval-table tbody td {
+    vertical-align: middle;
+    border-color: #f1f1f4;
+    padding: 1rem 10px;
+    background: #ffffff;
+}
+
+.leave-approval-page.overtime-approval-tax-style .approval-table.table-hover tbody tr:hover,
+.leave-approval-page.overtime-approval-tax-style .approval-table.table-hover tbody tr:hover td {
+    background-color: #fcfcfd !important;
+}

@@ -1,0 +1,187 @@
+/* .header-payroll {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 4px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+} */
+
+.header-payroll h1 {
+    color: #000000;
+    font-size: 26px;
+    font-weight: 600;
+    padding: 1rem 1rem 0.5rem 1rem;
+}
+
+.card-header-payroll h4 {
+    color: #d51c48;
+    font-size: 16px;
+    padding: 1rem;
+    border-bottom: 2px solid #d51c48;
+}
+
+.title-payroll {
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.lead-payroll {
+    font-weight: 600;
+    font-size: 18px;
+    color: #d51c48;
+}
+
+.table-payroll {
+    background-color: #fff;
+    width: 100%;
+}
+
+.table-payroll td,
+.table-payroll th {
+    vertical-align: middle !important;
+    padding: 12px 15px;
+}
+
+.table-payroll thead {
+    background-color: #efefef;
+    color: #000;
+    font-weight: 800;
+}
+
+.table-payroll thead th:first-child {
+    border-top-left-radius: 10px;
+}
+
+.table-payroll thead th:last-child {
+    border-top-right-radius: 10px;
+}
+
+.table-payroll tbody tr {
+    border-bottom: 1px solid #efefef;
+}
+
+/* tambah slip gaji */
+/* .name-employee {
+    z-index: 1;
+}
+.name-employee svg {
+    display: flex;
+    z-index: 2;
+    transform: translateY(-180%) translateX(2055%);
+}
+.name-employee2 {
+    z-index: 1;
+}
+.name-employee2 svg {
+    display: flex;
+    z-index: 2;
+    color: #d51c48;
+    transform: translateY(-180%) translateX(3250%);
+} */
+
+/* .select-employee {
+    appearance: none;
+}
+.select-employee[value="select-header"] {
+    color: gray;
+} */
+.total-pay::placeholder {
+    color: #000;
+}
+.total-pay:hover::placeholder {
+    color: #4e4e4e;
+}
+.evidence-icon {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+
+/* data master payslip */
+.rectangle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3.5rem;
+    width: 3.5rem;
+    background-color: #d51c48;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+.rectangle svg {
+    height: 3rem;
+    width: 3rem;
+    font-weight: bold;
+    color: #ffff;
+}
+
+/* modal add payslip */
+.payslip-modal {
+    background-color: #d51c48;
+    padding: 1rem 2rem;
+    width: 100%;
+}
+.payslip-modal h5 {
+    color: #fff;
+}
+.payslip-modal button {
+    color: #fff;
+}
+.payslip-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.file-preview {
+    width: auto;
+    max-width: auto;
+    max-height: 80px;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.preview-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.preview-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.preview-actions button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.btn-change {
+    background-color: #d51c48;
+    color: white;
+}
+
+.btn-remove {
+    background-color: #6c757d;
+    color: white;
+}
+
+.file-info {
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.hidden {
+    display: none !important;
+}

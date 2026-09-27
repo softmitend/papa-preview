@@ -1,0 +1,13 @@
+.date-picker {
+    z-index: 1;
+}
+.icon-calendar {
+    z-index: 2;
+    transform: translateY(-150%) translateX(95%);
+}
+.button-presence {
+    display: flex;
+    justify-content: right;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}

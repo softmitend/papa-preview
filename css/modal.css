@@ -1,0 +1,409 @@
+/* Overlay */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+.modal-overlay.show {
+    display: flex;
+}
+
+/* Kotak modal */
+.modal-delete-box {
+    background: #fff;
+    border-radius: 16px;
+    width: 400px;
+    padding: 1rem 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    font-family: "Poppins", sans-serif;
+    margin: 10rem auto;
+}
+.modal-check-box {
+    background: #fff;
+    border-radius: 16px;
+    width: 470px;
+    padding: 1rem 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    position: relative;
+    font-family: "Poppins", sans-serif;
+}
+
+/* icons */
+.modal-icons {
+    /*icon trash*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.modal-check-icons {
+    /*icon check*/
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* tombol X */
+.modal-close {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    color: #999;
+}
+.modal-close:hover {
+    color: #333;
+}
+
+/* lingkaran trash */
+.modal-trash {
+    position: relative;
+    background-color: #ffefee;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.trash-circle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #ffccc7;
+    border-radius: 50%;
+    z-index: 1;
+}
+.modal-trash svg {
+    position: relative;
+    z-index: 2;
+    width: 18px;
+    height: 18px;
+    color: #e75351;
+}
+
+/* lingkaran check */
+.modal-check {
+    position: relative;
+    background-color: #dffff0;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.check-circle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #a4ebcb;
+    border-radius: 50%;
+    z-index: 1;
+}
+.modal-check svg {
+    position: relative;
+    z-index: 2;
+    width: 18px;
+    height: 18px;
+    color: #039855;
+}
+
+/* lingkaran check 2 */
+.modal-check2 {
+    position: relative;
+    background-color: #fffcdf;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.check-circle2 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #ffedb1;
+    border-radius: 50%;
+    z-index: 1;
+}
+.modal-check2 svg {
+    position: relative;
+    z-index: 2;
+    width: 18px;
+    height: 18px;
+    color: #e7b511;
+}
+
+/* lingkaran check 3 */
+.modal-check3 {
+    position: relative;
+    background-color: #ffdfdf;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.check-circle3 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #ffb1b1;
+    border-radius: 50%;
+    z-index: 1;
+}
+.modal-check3 svg {
+    position: relative;
+    z-index: 2;
+    width: 18px;
+    height: 18px;
+    color: #e71111;
+}
+
+/* lingkaran print */
+.modal-print {
+    position: relative;
+    background-color: #ffecd8;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.print-circle {
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    background: #ffd3a0;
+    border-radius: 50%;
+    z-index: 1;
+}
+.modal-print svg {
+    position: relative;
+    z-index: 2;
+    width: 18px;
+    height: 18px;
+    color: #d97706;
+}
+
+/* text modal print */
+.modal-text-2 {
+    align-items: left;
+}
+.modal-text-2 h2 {
+    font-size: 18px;
+}
+.modal-text-2 p {
+    margin: 0;
+}
+
+/* Judul & teks */
+.modal-text {
+    align-items: left;
+    margin-top: 1rem;
+}
+.modal-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: #111;
+}
+.modal-text {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+/* textarea approval */
+.modal-text textarea {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    background-color: #dee2e6;
+    border: 1px solid #dee2e6;
+    outline: none;
+    transition: all 0.2s ease;
+}
+.modal-text textarea:focus {
+    border: 1px solid #85a4c4;
+    background-color: #dee2e6;
+    box-shadow: 0 0 4px rgba(101, 178, 255, 0.5);
+}
+
+/* Tombol aksi */
+.modal-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.btn-cancel-modal,
+.btn-confirm {
+    padding: 1rem 4rem;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+/* Tombol Batal */
+.btn-cancel-modal {
+    background: #6c757d;
+    color: white;
+    border: none;
+    /* padding: 10px 25px; */
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+.btn-cancel-modal:hover {
+    background: #f1f1f1;
+}
+
+/* Tombol Hapus */
+.btn-confirm {
+    background: #e53935;
+    color: #fff;
+    border: none;
+}
+.btn-confirm:hover {
+    background: #c62828;
+}
+
+/* Approved Modal */
+.modal-content {
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.form-control,
+.form-select {
+    border: 1px solid #e5e5e5;
+}
+
+.filter-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+.filter-header p {
+    margin: 0;
+}
+
+/* reset */
+.date-reset {
+    display: flex;
+    flex: row;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* wrapper search dan status */
+.status-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* searching dan filter nama karyawan */
+.search-box {
+    width: 205px;
+}
+
+#filterModal .search-box .presence-employee-filter--compact {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+#filterModal .search-box .presence-employee-filter--compact select.presence-employee-select + .select2-container {
+    width: 100% !important;
+}
+
+#filterModal .search-box .presence-employee-filter--compact select.presence-employee-select + .select2-container .select2-selection--single {
+    height: calc(1.5em + 0.75rem + 2px);
+    min-height: 38px;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+    background: #fff;
+}
+
+#filterModal .search-box .presence-employee-filter--compact select.presence-employee-select + .select2-container .select2-selection--single .select2-selection__rendered {
+    line-height: calc(1.5em + 0.75rem);
+    padding-left: 0.75rem;
+    font-size: 1rem;
+}
+
+#filterModal .search-box .presence-employee-filter--compact select.presence-employee-select + .select2-container .select2-selection--single .select2-selection__arrow {
+    height: calc(1.5em + 0.75rem);
+}
+.search-box input {
+    width: 100%;
+    border: 1px solid #e5e5e5;
+    border-radius: 5px;
+}
+.filter-select {
+    width: 205px;
+    padding: 0.6rem;
+    border-radius: 5px;
+    border: 1px solid #e5e5e5;
+    appearance: none;
+}
+
+/* button modal filter */
+.modal-footer {
+    display: flex;
+    justify-content: space-between;
+}
+.btn-footer {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+}
+
+/* batal */
+.filter-cancel {
+    padding: 0.3rem 2rem;
+    border-radius: 10px;
+    background-color: #ffdada;
+    border: unset;
+    color: #9e2121;
+}
+.filter-cancel:hover {
+    background-color: #9e2121;
+    border: unset;
+    color: #ffdada;
+}
+
+/* filter */
+.filter-confirm {
+    padding: 0.3rem 2rem;
+    border-radius: 10px;
+    background-color: #b6f2b6;
+    border: unset;
+    color: #085a24;
+}
+.filter-confirm:hover {
+    background-color: #085a24;
+    border: unset;
+    color: #b6f2b6;
+}
