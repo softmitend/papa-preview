@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no" name="viewport">
+    <title>Slip Gaji &mdash; PAPA</title>
+
+    <meta name="csrf-token" content="">
+
+    <!-- General CSS Files -->
+    <link rel="stylesheet" href="library/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <link rel="stylesheet" href="css/payroll/rules/tax/index.css">
+    <link rel="stylesheet" href="css/payroll/hrd/payslip.css?v=1784059162">
+
+    <!-- Template CSS -->
+    <link rel="stylesheet" href="library/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="css/presence-recap-shared.css">
+    <link rel="stylesheet" href="library/bootstrap-daterangepicker/daterangepicker.css" />
+    <link href="library/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/leave.css">
+    <link rel="stylesheet" href="css/overtime.css">
+    <link rel="stylesheet" href="css/payroll.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/report.css">
+    <link rel="stylesheet" href="css/profile.css">
+
+    <link rel="stylesheet" href="css/employee.css">
+    <link rel="stylesheet" href="css/button-element.css">
+
+    
+    <script>
+        function updateClock() {
+            const now = new Date();
+            const jam = now.getHours().toString().padStart(2, '0');
+            const menit = now.getMinutes().toString().padStart(2, '0');
+            const detik = now.getSeconds().toString().padStart(2, '0');
+            const clock = document.getElementById('realtime-clock');
+            if (!clock) {
+                return;
+            }
+
+            clock.textContent = `${jam}:${menit}:${detik}`;
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            updateClock();
+            setInterval(updateClock, 1000);
+        });
+    </script>
+    <script src="js/portfolio-demo.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="main-wrapper">
+            <div class="modal fade" id="notificationModal" tabindex="-1" role="dialog" aria-labelledby="notificationModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="notificationModalLabel">Notifikasi Penting</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="navbar-bg"></div>
+<nav class="navbar navbar-expand-lg main-navbar">
+    <form class="form-inline mr-auto">
+        <ul class="navbar-nav mr-3">
+            <li><a href="#" data-toggle="sidebar" class="nav-link nav-link-lg"><i class="fas fa-bars"></i></a>
+            </li>
+            <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i
+                        class="fas fa-search"></i></a></li>
+        </ul>
+
+    </form>
+    <ul class="navbar-nav navbar-right">
+        <li class="nav-item d-flex align-items-center mr-3">
+            <span id="realtime-clock" style="font-weight: bold; font-size: 16px; color: white;"></span>
+        </li>
+
+        <li class="dropdown dropdown-list-toggle">
+            <a href="#" data-toggle="dropdown"
+                class="nav-link notification-toggle nav-link-lg ">
+                <i class="fas fa-bell"></i>
+            </a>
+            <div class="dropdown-menu dropdown-list dropdown-menu-right">
+                <div class="dropdown-header">Notifikasi
+                    <div class="float-right text-muted" style="font-size: 12px;">0 terbaru</div>
+                </div>
+                <div class="dropdown-list-content dropdown-list-icons">
+                                            <a href="#" class="dropdown-item dropdown-item-unread">
+                            <div class="dropdown-item-desc">
+                                Belum ada notifikasi approval atau cuti.
+                            </div>
+                        </a>
+                                    </div>
+                <div class="dropdown-footer text-center">
+                    <a href="#" data-demo-disabled="true">Lihat Approval HRD <i
+                            class="fas fa-chevron-right"></i></a>
+                </div>
+            </div>
+        </li>
+        <li class="dropdown"><a href="#" data-toggle="dropdown"
+                class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                <img alt="image" src="images/avatar-1.png" class="rounded-circle mr-1">
+                <div class="d-sm-none d-lg-inline-block">Hi, HRD</div>
+            </a>
+            <div class="dropdown-menu dropdown-menu-right">
+                <div class="dropdown-title">Logged in
+                    24 seconds ago</div>
+                <div class="dropdown-divider"></div>
+                                                                                        <a href="#" class="dropdown-item has-icon text-danger"
+                    onclick="event.preventDefault(); window.logoutViaNavbar ? window.logoutViaNavbar() : (localStorage.removeItem('auth_token'), document.getElementById('logout-form').submit()); return false;">
+
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </a>
+                <form id="logout-form" action="#" data-demo-form="true" method="POST" style="display: none;">
+                    <input type="hidden" name="_token" value="" autocomplete="off">                </form>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+            <div class="main-sidebar sidebar-style-2">
+    <aside id="sidebar-wrapper">
+        <style>
+            .main-sidebar #sidebar-wrapper {
+                padding-top: 18px !important;
+            }
+
+            .papa-brand {
+                display: inline-flex;
+                align-items: center;
+                gap: 10px;
+                font-weight: 800;
+                color: #d61c4e !important;
+                letter-spacing: .2px;
+            }
+
+            .papa-brand .papa-brand-icon {
+                width: 41px;
+                height: 41px;
+                border-radius: 6px;
+                background: #d61c4e;
+                color: #fff;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 14px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .papa-brand .papa-brand-icon .papa-gear {
+                position: absolute;
+                display: block;
+                line-height: 1;
+            }
+
+            .papa-brand .papa-brand-icon .papa-gear-1 {
+                font-size: 18px;
+                left: 5px;
+                top: 13px;
+                transform: rotate(25deg);
+            }
+
+            .papa-brand .papa-brand-icon .papa-gear-2 {
+                font-size: 13px;
+                left: 23px;
+                top: 6px;
+                transform: rotate(-10deg);
+            }
+
+            .papa-brand .papa-brand-icon .papa-gear-3 {
+                font-size: 10px;
+                right: 6px;
+                bottom: 7px;
+                transform: rotate(15deg);
+            }
+
+            .papa-brand .papa-brand-text {
+                font-size: 44px;
+                line-height: 1;
+            }
+
+            .main-sidebar #sidebar-wrapper .sidebar-brand,
+            .main-sidebar #sidebar-wrapper .sidebar-brand.sidebar-brand-sm {
+                height: auto !important;
+                line-height: normal !important;
+                padding-top: 14px !important;
+                padding-bottom: 14px !important;
+            }
+
+            .main-sidebar #sidebar-wrapper .sidebar-brand {
+                margin-top: 0;
+                margin-bottom: 16px !important;
+            }
+
+            .sidebar-brand-sm .papa-brand .papa-brand-icon {
+                flex: 0 0 32px;
+                width: 32px;
+                height: 32px;
+                border-radius: 6px;
+            }
+
+            .sidebar-brand-sm .papa-brand {
+                width: 100%;
+                justify-content: center;
+                gap: 0;
+            }
+
+            .sidebar-brand-sm .papa-brand .papa-gear-1 {
+                left: 4px;
+                top: 10px;
+                font-size: 14px;
+            }
+
+            .sidebar-brand-sm .papa-brand .papa-gear-2 {
+                left: 18px;
+                top: 5px;
+                font-size: 10px;
+            }
+
+            .sidebar-brand-sm .papa-brand .papa-gear-3 {
+                right: 5px;
+                bottom: 5px;
+                font-size: 8px;
+            }
+
+            .main-sidebar #sidebar-wrapper .sidebar-menu {
+                padding: 0 0 12px;
+            }
+
+            .main-sidebar.sidebar-style-2 #sidebar-wrapper ul.sidebar-menu>li:not(.menu-header) {
+                margin-bottom: 0.35rem !important;
+            }
+
+            .main-sidebar.sidebar-style-2 #sidebar-wrapper .sidebar-menu li.menu-header {
+                margin: 1rem 12px 10px;
+                padding: 0;
+                font-size: 11px;
+                font-weight: 700;
+                letter-spacing: .08em;
+                text-transform: uppercase;
+                color: #9aa3b2;
+            }
+
+            .main-sidebar #sidebar-wrapper .sidebar-menu li>a,
+            .main-sidebar #sidebar-wrapper .sidebar-menu li>a.nav-link,
+            .main-sidebar #sidebar-wrapper .sidebar-menu li>a.nav-link.has-dropdown {
+                display: flex !important;
+                align-items: center !important;
+                gap: 12px !important;
+                min-height: 40px !important;
+                padding: 6px 12px 6px 16px !important;
+                margin-left: 10px !important;
+                margin-right: 10px !important;
+                width: calc(100% - 20px) !important;
+                box-sizing: border-box;
+                border-radius: 7px;
+            }
+
+            .main-sidebar #sidebar-wrapper .sidebar-menu li>a i {
+                flex: 0 0 20px !important;
+                width: 20px !important;
+                min-width: 20px !important;
+                height: 20px !important;
+                font-size: 14px !important;
+                line-height: 1 !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                margin-right: 0 !important;
+            }
+
+            .main-sidebar #sidebar-wrapper .sidebar-menu li>a span {
+                display: block;
+                margin: 0 !important;
+                line-height: 1.2;
+                width: auto !important;
+            }
+
+            .main-sidebar #sidebar-wrapper .sidebar-menu li>a:hover {
+                background: #f1f3f5;
+            }
+
+            .main-sidebar #sidebar-wrapper .sidebar-menu li.active>a,
+            .main-sidebar #sidebar-wrapper .sidebar-menu li.force-active>a {
+                background: #d61c4e !important;
+                color: #fff !important;
+                font-weight: 600;
+            }
+
+            .main-sidebar #sidebar-wrapper .sidebar-menu li.active>a i,
+            .main-sidebar #sidebar-wrapper .sidebar-menu li.active>a span,
+            .main-sidebar #sidebar-wrapper .sidebar-menu li.force-active>a i,
+            .main-sidebar #sidebar-wrapper .sidebar-menu li.force-active>a span {
+                color: #fff !important;
+            }
+
+            .main-sidebar #sidebar-wrapper .sidebar-menu li ul.dropdown-menu li {
+                margin-bottom: 2px;
+            }
+
+            .main-sidebar #sidebar-wrapper .sidebar-menu li ul.dropdown-menu li>a {
+                display: flex;
+                align-items: center;
+                min-height: 36px !important;
+                padding: 4px 12px 4px 46px !important;
+                line-height: 1.2 !important;
+                font-size: 13px;
+            }
+
+            body.sidebar-mini .main-sidebar #sidebar-wrapper {
+                width: 65px;
+                overflow: visible;
+            }
+
+            body.sidebar-mini .main-sidebar #sidebar-wrapper .sidebar-brand {
+                display: none;
+            }
+
+            body.sidebar-mini .main-sidebar #sidebar-wrapper .sidebar-brand.sidebar-brand-sm {
+                display: block;
+                margin-bottom: 8px !important;
+                padding: 10px 0 !important;
+            }
+
+            body.sidebar-mini .main-sidebar #sidebar-wrapper .sidebar-menu {
+                padding: 0 0 12px;
+            }
+
+            body.sidebar-mini .main-sidebar.sidebar-style-2 #sidebar-wrapper .sidebar-menu>li {
+                position: relative;
+                margin: 0 !important;
+                padding: 4px 10px !important;
+            }
+
+            body.sidebar-mini .main-sidebar.sidebar-style-2 #sidebar-wrapper .sidebar-menu>li.menu-header {
+                height: 8px;
+                margin: 0 !important;
+                padding: 0 !important;
+                font-size: 0 !important;
+                line-height: 0;
+                overflow: hidden;
+            }
+
+            body.sidebar-mini .main-sidebar #sidebar-wrapper .sidebar-menu>li>a,
+            body.sidebar-mini .main-sidebar #sidebar-wrapper .sidebar-menu>li>a.nav-link,
+            body.sidebar-mini .main-sidebar #sidebar-wrapper .sidebar-menu>li>a.nav-link.has-dropdown {
+                justify-content: center !important;
+                gap: 0 !important;
+                width: 45px !important;
+                min-height: 42px !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                border-radius: 8px;
+            }
+
+            body.sidebar-mini .main-sidebar #sidebar-wrapper .sidebar-menu>li>a span {
+                display: none !important;
+            }
+
+            body.sidebar-mini .main-sidebar #sidebar-wrapper .sidebar-menu>li>a i {
+                flex: 0 0 20px !important;
+                width: 20px !important;
+                min-width: 20px !important;
+                height: 20px !important;
+                margin: 0 !important;
+                font-size: 15px !important;
+            }
+
+            body.sidebar-mini .main-sidebar #sidebar-wrapper .sidebar-menu>li>a.has-dropdown:after {
+                content: none !important;
+            }
+
+            body.sidebar-mini .main-sidebar #sidebar-wrapper .sidebar-menu>li>ul.dropdown-menu {
+                left: 55px;
+                top: 4px;
+                width: 220px;
+                padding: 8px 0;
+                border-radius: 8px;
+                box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+            }
+
+            body.sidebar-mini .main-sidebar #sidebar-wrapper .sidebar-menu>li>ul.dropdown-menu li>a {
+                width: calc(100% - 16px) !important;
+                min-height: 38px !important;
+                margin: 0 8px !important;
+                padding: 7px 12px !important;
+                border-radius: 6px;
+            }
+        </style>
+        <div class="sidebar-brand">
+            <a href="index.html" class="papa-brand">
+                <span class="papa-brand-icon">
+                    <i class="fa-solid fa-gear papa-gear papa-gear-1" aria-hidden="true"></i>
+                    <i class="fa-solid fa-gear papa-gear papa-gear-2" aria-hidden="true"></i>
+                    <i class="fa-solid fa-gear papa-gear papa-gear-3" aria-hidden="true"></i>
+                </span>
+                <span class="papa-brand-text">PAPA</span>
+            </a>
+        </div>
+        <div class="sidebar-brand sidebar-brand-sm">
+            <a href="index.html" class="papa-brand">
+                <span class="papa-brand-icon">
+                    <i class="fa-solid fa-gear papa-gear papa-gear-1" aria-hidden="true"></i>
+                    <i class="fa-solid fa-gear papa-gear papa-gear-2" aria-hidden="true"></i>
+                    <i class="fa-solid fa-gear papa-gear papa-gear-3" aria-hidden="true"></i>
+                </span>
+            </a>
+        </div>
+                <ul class="sidebar-menu">
+            <li class="menu-header">Dashboard</li>
+            <li class="nav-item ">
+                <a href="index.html" class="nav-link"><i
+                        class="fas fa-home"></i><span>Dashboard</span></a>
+            </li>
+
+            <li class="menu-header">Data Master</li>
+            <li class="nav-item dropdown ">
+                <a href="" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fa fa-users"
+                        aria-hidden="true"></i><span>Karyawan</span></a>
+                <ul class="dropdown-menu">
+                    <li class="">
+                        <a class="nav-link" href="#" data-demo-disabled="true">Melihat Data Karyawan</a>
+                    </li>
+
+                    <li class="">
+                        <a class="nav-link" href="#" data-demo-disabled="true">Menambah Karyawan</a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li class="menu-header">Operasional</li>
+            <li class="">
+                <a href="work-schedule-settings.html" class="nav-link">
+                    <i class="fas fa-clock"></i><span> Jam Kerja </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="#" data-demo-disabled="true" class="nav-link">
+                    <i class="fas fa-pen"></i><span>Absensi</span>
+                </a>
+            </li>
+            <li class="">
+                <a href="#" data-demo-disabled="true" class="nav-link">
+                    <i class="fas fa-clipboard"></i><span>Cuti</span>
+                </a>
+            </li>
+
+            <li class="">
+                <a href="#" data-demo-disabled="true" class="nav-link">
+                    <i class="fas fa-book"></i><span>Kegiatan Harian PM</span>
+                </a>
+            </li>
+
+            <li class="">
+                <a href="#" data-demo-disabled="true" class="nav-link">
+                    <i class="fas fa-diagram-project"></i><span> Proyek </span>
+                </a>
+            </li>
+
+            <li class="nav-item dropdown ">
+                <a href="" class="nav-link has-dropdown" data-toggle="dropdown"><i
+                        class="fas fa-book"></i><span>Kontrak Kerja</span></a>
+                <ul class="dropdown-menu">
+                    <li class="">
+                        <a class="nav-link" href="#" data-demo-disabled="true">Tambah Kontrak Kerja</a>
+                    </li>
+                    <li class="">
+                        <a class="nav-link" href="#" data-demo-disabled="true">Riwayat Kontrak
+                            Kerja</a>
+                    </li>
+
+                </ul>
+            </li>
+
+			<li class="menu-header">Persetujuan</li>
+            <li class="">
+                <a href="#" data-demo-disabled="true" class="nav-link">
+                    <i class="fas fa-newspaper"></i><span> Persetujuan Cuti </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="#" data-demo-disabled="true" class="nav-link">
+                    <i class="fas fa-calendar"></i><span> Persetujuan Lembur </span>
+                </a>
+            </li>
+
+            <li class="menu-header">RMS</li>
+            <li class="">
+                <a href="rms.html" class="nav-link">
+                    <i class="fas fa-compass"></i><span> Panduan RMS </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="rate-key-catalog.html" class="nav-link">
+                    <i class="fas fa-key"></i><span> Katalog Kunci Tarif </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="rate-settings.html" class="nav-link">
+                    <i class="fas fa-coins"></i><span> Master Tarif </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="tax.html" class="nav-link">
+                    <i class="fas fa-receipt"></i><span> Kelola Pajak </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="components.html" class="nav-link">
+                    <i class="fas fa-cubes"></i><span> Komponen Gaji </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="rules.html" class="nav-link">
+                    <i class="fas fa-sitemap"></i><span> Repositori Aturan </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="evaluation-report.html" class="nav-link">
+                    <i class="fas fa-chart-simple"></i><span> Evaluasi Aturan Gaji </span>
+                </a>
+            </li>
+            <li class="">
+                <a href="audit-trail.html" class="nav-link">
+                    <i class="fas fa-clock-rotate-left"></i><span> Audit Trail </span>
+                </a>
+            </li>
+
+            
+
+                        <li class="menu-header">Penggajian</li>
+            <li class="active">
+                <a href="payslip.html" class="nav-link">
+                    <i class="fas fa-calendar"></i><span> Slip Gaji </span>
+                </a>
+            </li>
+
+            <li class="menu-header">Laporan</li>
+            <li class="">
+                <a href="#" data-demo-disabled="true" class="nav-link">
+                    <i class="fas fa-file-circle-check"></i><span> Rekap Absensi </span>
+                </a>
+            </li>
+            
+            <li class="">
+                <a href="#" data-demo-disabled="true" class="nav-link">
+                    <i class="fas fa-chart-line"></i><span> Kinerja </span>
+                </a>
+            </li>
+
+            <li class="menu-header">Profil</li>
+            <li class="nav-item">
+                <a href="#" data-demo-disabled="true" class="nav-link">
+                    <i class="fas fa-user"></i> <span> Profil </span>
+                </a>
+            </li>
+        </ul>
+    </aside>
+</div>
+
+                <div class="main-content">
+        <section class="section">
+            <div class="section-header d-flex justify-content-between align-items-center">
+                <div>
+                    <h1 class="mb-0">Slip Gaji & Validasi Pembayaran</h1>
+                    <div class="page-subtitle" style="margin-top: 1px;">
+                    Halaman ini menampilkan otomatis daftar karyawan yang menunggu pembayaran gaji
+                    </div>
+                </div>
+            </div>
+
+            <div class="card tax-summary-card">
+                <div class="card-body pb-1">
+                    <div class="tax-summary">
+                        <div class="row mb-0">
+                            <div class="col-md-4 col-sm-6 mb-3">
+                                <div class="tax-stat-card">
+                                    <div class="tax-stat-label">Menunggu Pembayaran</div>
+                                    <div class="tax-stat-value" id="pendingCount">0</div>
+                                    <div class="summary-note">Karyawan aktif yang belum menerima gaji di periode ini</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-6 mb-3">
+                                <div class="tax-stat-card">
+                                    <div class="tax-stat-label">Slip Tergenerate</div>
+                                    <div class="tax-stat-value is-active" id="paidCount">0</div>
+                                    <div class="summary-note">Slip gaji yang sudah dibuat dari upload bukti transfer</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12 mb-3">
+                                <div class="tax-stat-card">
+                                    <div class="tax-stat-label">Periode Pembayaran</div>
+                                    <div class="tax-stat-value" id="selectedPeriodLabel">-</div>
+                                    <div class="summary-note">Gunakan filter tanggal untuk mengatur batch pembayaran</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="approval-tabs" role="tablist" aria-label="Grup tabel slip gaji">
+                <button type="button" class="approval-tab active" id="pendingTabButton" data-panel-target="pendingPanel"
+                    role="tab" aria-selected="true">
+                    Menunggu Pembayaran
+                </button>
+                <button type="button" class="approval-tab" id="historyTabButton" data-panel-target="historyPanel"
+                    role="tab" aria-selected="false">
+                    Riwayat Pembayaran
+                </button>
+            </div>
+
+            <div id="pendingPanel" class="tab-panel active" role="tabpanel">
+                <div class="content-card tax-card mb-4">
+                    <div class="content-card-header">
+                        <div>
+                            <h3 class="content-card-title">Karyawan Menunggu Pembayaran</h3>
+                            <div class="content-card-subtitle">Upload bukti transfer untuk membuat slip gaji secara otomatis.</div>
+                        </div>
+
+                        <div class="d-flex align-items-center" style="gap:10px;">
+                            <input type="date" id="paymentDateFilter" class="form-control" style="width: 190px;">
+                            <button class="btn btn-light" id="refreshPendingButton">
+                                <i class="fas fa-sync-alt"></i> Refresh
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="content-card-body">
+                        <div id="pendingError" class="alert alert-danger d-none"></div>
+
+                        <div class="table-responsive" id="pendingTableWrapper">
+                            <table class="table table-hover tax-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Karyawan</th>
+                                        <th>Basic Salary</th>
+                                        <th>Pajak</th>
+                                        <th>Potongan Rule</th>
+                                        <th>Earning Rule</th>
+                                        <th>Take Home Pay</th>
+                                        <th>Status</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="pendingTableBody">
+                                    <tr class="table-state-row">
+                                        <td colspan="8">
+                                            <div class="table-state-content" aria-live="polite">
+                                                <i class="fas fa-spinner fa-spin"></i>
+                                                <div>
+                                                    <div class="table-state-title">Memuat karyawan menunggu pembayaran...</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div id="pendingEmptyState" class="empty-state-box d-none">
+                            <div><i class="fas fa-check-circle"></i></div>
+                            <div class="font-weight-600 mb-1">Tidak ada pembayaran yang menunggu</div>
+                            <div>Semua karyawan aktif pada periode ini sudah memiliki slip gaji.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="historyPanel" class="tab-panel" role="tabpanel">
+                <div class="content-card tax-card">
+                    <div class="content-card-header">
+                        <div>
+                            <h3 class="content-card-title">Riwayat Slip Gaji</h3>
+                            <div class="content-card-subtitle">Slip yang sudah tergenerate setelah pembayaran divalidasi.</div>
+                        </div>
+
+                        <button class="btn btn-light" id="refreshHistoryButton">
+                            <i class="fas fa-sync-alt"></i> Refresh Riwayat
+                        </button>
+                    </div>
+
+                    <div class="content-card-body">
+                        <div id="historyError" class="alert alert-danger d-none"></div>
+                        <div id="historySuccess" class="alert alert-success d-none"></div>
+
+                        <div class="table-responsive" id="historyTableWrapper">
+                            <table class="table table-hover tax-table mb-0">
+                                <thead>
+                                    <tr>
+                                        <th>Karyawan</th>
+                                        <th>Tanggal Pembayaran</th>
+                                        <th>Jumlah Dibayarkan</th>
+                                        <th>Bukti Transfer</th>
+                                        <th>Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="historyTableBody">
+                                    <tr class="table-state-row">
+                                        <td colspan="5">
+                                            <div class="table-state-content" aria-live="polite">
+                                                <i class="fas fa-spinner fa-spin"></i>
+                                                <div>
+                                                    <div class="table-state-title">Memuat riwayat slip gaji...</div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div id="historyEmptyState" class="empty-state-box d-none">
+                            <div><i class="fas fa-file-invoice-dollar"></i></div>
+                            <div class="font-weight-600 mb-1">Belum ada slip gaji</div>
+                            <div>Slip akan muncul otomatis setelah bukti transfer diunggah.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div class="modal fade" id="uploadTransferModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <form id="uploadTransferForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="uploadTransferModalLabel">Upload Bukti Transfer</h5>
+                    </div>
+                    <div class="modal-body">
+                        <input type="hidden" id="uploadMasterSalaryId" name="id_master_salary">
+                        <input type="hidden" id="uploadSalaryDate" name="salary_date">
+
+                        <div class="mb-2 text-muted small" id="uploadEmployeeCaption"></div>
+
+                        <div class="transfer-breakdown" id="uploadTransferBreakdown">
+                            <div class="transfer-breakdown-title">Detail Earning & Potongan</div>
+                            <div class="transfer-breakdown-grid">
+                                <div class="transfer-breakdown-item">
+                                    <div class="transfer-breakdown-label">Earning Rule</div>
+                                    <div class="transfer-breakdown-value text-success" id="uploadRuleEarningAmount">Rp0</div>
+                                </div>
+                                <div class="transfer-breakdown-item">
+                                    <div class="transfer-breakdown-label">Potongan Pajak</div>
+                                    <div class="transfer-breakdown-value text-danger" id="uploadTaxDeductionAmount">Rp0</div>
+                                </div>
+                                <div class="transfer-breakdown-item">
+                                    <div class="transfer-breakdown-label">Potongan Rule</div>
+                                    <div class="transfer-breakdown-value text-danger" id="uploadRuleDeductionAmount">Rp0</div>
+                                </div>
+                                <div class="transfer-breakdown-item">
+                                    <div class="transfer-breakdown-label">Total Potongan</div>
+                                    <div class="transfer-breakdown-value text-danger" id="uploadTotalDeductionAmount">Rp0</div>
+                                </div>
+                            </div>
+
+                            <div class="transfer-breakdown-detail-grid">
+                                <div class="transfer-breakdown-detail-section">
+                                    <div class="transfer-breakdown-detail-title">Rincian Earning</div>
+                                    <div class="transfer-breakdown-detail-list" id="uploadEarningDetailList">
+                                        <div class="transfer-breakdown-empty">Belum ada komponen earning.</div>
+                                    </div>
+                                </div>
+                                <div class="transfer-breakdown-detail-section">
+                                    <div class="transfer-breakdown-detail-title">Rincian Potongan</div>
+                                    <div class="transfer-breakdown-detail-list" id="uploadDeductionDetailList">
+                                        <div class="transfer-breakdown-empty">Belum ada komponen potongan.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="transfer-breakdown-net">
+                                <div>
+                                    <div class="transfer-breakdown-net-label">Total Didapatkan</div>
+                                    <div class="transfer-breakdown-net-caption">Nominal bersih yang diterima karyawan.</div>
+                                </div>
+                                <div class="transfer-breakdown-net-value" id="uploadNetSalaryAmount">Rp0</div>
+                            </div>
+                        </div>
+
+                        <label for="uploadTransferProof" class="font-weight-600 mb-1">Pilih file bukti transfer</label>
+                        <input type="file" id="uploadTransferProof" name="transfer_proof"
+                            accept=".jpg,.jpeg,.png,.pdf" class="form-control" required>
+                        <div class="text-muted small mt-2">Format: JPG, PNG, atau PDF.</div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" onclick="closeUploadModal()">Batal</button>
+                        <button type="submit" class="btn btn-primary" id="uploadTransferSubmitButton">
+                            <i class="fas fa-upload"></i> Upload & Generate
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="proofModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="proofModalLabel">Bukti Transfer</h5>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="proofImage" src="" alt="Bukti Transfer" class="img-fluid rounded shadow-sm d-none"
+                        style="max-height: 70vh; object-fit: contain;">
+                    <iframe id="proofPdf" class="w-100 d-none" style="min-height: 70vh; border:0;"></iframe>
+                </div>
+                <div class="modal-footer">
+                    <a id="proofDownloadLink" href="#" class="btn btn-primary" download>
+                        <i class="fas fa-download"></i> Download
+                    </a>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="closeProofModal()">Tutup</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+            <footer class="main-footer text-center">
+    <small class="text-muted d-block">
+        &copy; Jurusan Bisnis dan Informatika, Politeknik Negeri Banyuwangi. <br>Aplikasi ini dikembangkan sebagai hasil Tugas Akhir mahasiswa di bawah bimbingan dosen Jurusan Bisnis dan Informatika.
+    </small>
+</footer>
+
+        </div>
+    </div>
+
+    <!-- General JS Scripts -->
+    <script src="library/jquery/dist/jquery.min.js"></script>
+    <script src="library/popper.js/dist/umd/popper.js"></script>
+    <script src="library/tooltip.js/dist/umd/tooltip.js"></script>
+    <script src="library/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="library/jquery.nicescroll/dist/jquery.nicescroll.min.js"></script>
+    <script src="library/moment/min/moment.min.js"></script>
+    <script src="js/stisla.js"></script>
+    <script src="library/select2/dist/js/select2.min.js"></script>
+    <script src="js/presence-recap/presence-recap-ui.js"></script>
+
+    <!-- Auth API helper loaded before page-specific scripts. -->
+    <script src="js/auth-api.js"></script>
+
+                <script type="application/json" id="payroll-hrd-payslip-config">
+        {"detailUrl":"payslip.html","storageBaseUrl":""}    </script>
+    <script src="js/payroll/hrd/payslip.js"></script>
+    
+    <!-- Template JS File -->
+    <script src="js/scripts.js"></script>
+    <script src="js/custom.js"></script>
+    </body>
+
+</html>
+

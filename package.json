@@ -1,0 +1,13 @@
+{
+  "name": "papa-payroll-rms-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontend-only portfolio demo of the PAPA payroll and RMS modules.",
+  "scripts": {
+    "start": "serve . -l 4173",
+    "preview": "serve . -l 4173"
+  },
+  "devDependencies": {
+    "serve": "^14.2.4"
+  }
+}

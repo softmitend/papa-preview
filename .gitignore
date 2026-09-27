@@ -1,0 +1,14 @@
+node_modules/
+.DS_Store
+Thumbs.db
+npm-debug.log*
+
+# The local export contains the source application's full public asset folders.
+# Only the files referenced by the portfolio pages are force-added to Git.
+/css/**
+/js/**
+/images/**
+/fonts/**
+/library/**
+/vendor/**
+/build/**
