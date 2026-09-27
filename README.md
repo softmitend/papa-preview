@@ -1,13 +1,4 @@
-# Portfolio — PAPA & NURTURA
-
-Halaman utama repository ini adalah showcase dua studi kasus:
-
-- **PAPA — Payroll & Rule Management System**, dengan preview frontend interaktif yang aman dibuka publik.
-- **NURTURA — Klasifikasi & Pemantauan Stunting**, yang dipertahankan sebagai dokumentasi karena domain website aslinya sudah kedaluwarsa.
-
-Capture kedua proyek disimpan di `images/portfolio/`. Preview PAPA dapat dibuka melalui `papa-preview.html`.
-
-## PAPA — batasan preview
+# PAPA — Payroll & RMS Portfolio Demo
 
 Demo ini menampilkan frontend modul penggajian dan Rule Management System (RMS) dari sistem PAPA yang telah digunakan secara operasional.
 

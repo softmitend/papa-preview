@@ -28,7 +28,6 @@ npm-debug.log*
 !/css/profile.css
 !/css/report.css
 !/css/style.css
-!/css/portfolio.css
 !/css/payroll/
 !/css/payroll/dashboard-HRD.css
 !/css/payroll/hrd/
@@ -79,9 +78,6 @@ npm-debug.log*
 !/images/asset-1.png
 !/images/avatar-1.png
 !/images/bukti-transfer.png
-!/images/portfolio/
-!/images/portfolio/papa-dashboard.png
-!/images/portfolio/nurtura-login.png
 
 # Third-party browser assets used by the static pages
 !/library/
